@@ -1,21 +1,21 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Link from 'next/link'
-import { startClock } from '../actions'
-import Examples from '../components/examples'
+import "../public/global.less";
+import styled from 'styled-components';
+
+const H1 = styled.h1`
+  text-decoration: underline;
+`;
 
 const Index = () => {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(startClock())
-  }, [dispatch])
 
   return (
     <>
-      <Examples />
       <Link href="/show-redux-state">
         <a>Click to see current Redux State</a>
       </Link>
+        <H1>سلام خوبی خسته نباشی</H1>
     </>
   )
 }
