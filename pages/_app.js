@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { useStore } from "../redux/store";
-import { CustomProvider } from "rsuite";
-import faIr from "rsuite/locales/fa_IR";
 import Head from "next/head";
 import {ThemeProvider} from 'styled-components';
 //import SimpleReactLightbox from "simple-react-lightbox";  //LIGHT BOX IF NEED
@@ -36,7 +34,7 @@ export default function App({ Component, pageProps }) {
       });
     }
   }, []);
-
+  
   return (
     <Provider store={store}>
       <Head>
@@ -59,12 +57,9 @@ export default function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
-      
-      <CustomProvider theme="dark" rtl locale={faIr}>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
         </ThemeProvider>
-      </CustomProvider>
     </Provider>
   );
 }

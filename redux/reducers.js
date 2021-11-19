@@ -3,12 +3,16 @@ import Type from "./types";
 
 // INITIAL TIMER STATE
 const INITIAL_SITE_STATE = {
-  user: "null",
+  theme: "dark",
+  language: "FA",
+  user: null,
 };
 
 // COUNTER REDUCER
 const siteReducer = (state = INITIAL_SITE_STATE, action) => {
   switch (action.type) {
+    case Type.SET_THEME:
+      return { ...state, theme: action.payload };
     case Type.SET_USER:
       return { ...state, user: action.payload };
     default:

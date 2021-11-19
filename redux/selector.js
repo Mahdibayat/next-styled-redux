@@ -6,3 +6,8 @@ export const UserSelect = createSelector(
   [siteSelector],
   site => site.user
 )
+
+export const ThemeSelect = createSelector(
+  [siteSelector],
+  site => site.theme
+)
